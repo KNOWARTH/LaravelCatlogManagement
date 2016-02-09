@@ -29,6 +29,8 @@ Route::get('/', function () {
 Route::group(['middleware' => ['web']], function () {
 
   Route::get('AddCategory','Admin\CategoryController@AddCategory');
+  Route::get('ajaxsubcat','Admin\CategoryController@ajaxsubcat');
+  
   Route::post('insert_category','Admin\CategoryController@insert_category');
   //insert_category
 });
