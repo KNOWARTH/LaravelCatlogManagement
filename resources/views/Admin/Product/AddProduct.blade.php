@@ -73,7 +73,19 @@
                             <label class="col-md-4 control-label">Category</label>
 
                             <div class="col-md-6">
-                                <input type="text" class="form-control" name="p_category_id">
+                                <!-- <input type="text" class="form-control" name="p_category_id"> -->
+
+                                <select name="p_category_id" class="form-control"  >
+                                  <option selected="selected">Select Cat</option>
+                                  <?php
+                                  foreach($results as $name) { ?>
+                                  <option value="<?= $name['c_id'] ?>"><?= $name['c_name'] ?></option>
+                                  <?php
+                              } ?>
+                          </select>
+
+                               
+                             
 <!-- 
                                 @if ($errors->has('password'))
                                     <span class="help-block">

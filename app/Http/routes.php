@@ -30,4 +30,7 @@ Route::group(['middleware' => ['web']], function () {
     
     Route::get('AddProduct','Admin\ProductController@AddProduct');
     Route::post('insertProduct','Admin\ProductController@insertProduct');
+    Route::get('AddCategory','Admin\CategoryController@AddCategory');
+  Route::post('insert_category','Admin\CategoryController@insert_category');
+   Route::get('ajaxsubcat','Admin\CategoryController@ajaxsubcat');
 });
