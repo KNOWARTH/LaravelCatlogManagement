@@ -3,26 +3,41 @@
 <head>
 	<title></title>
 	@include('Admin/AdminHeader')
-	
-	<script>
-		$(document).ready(function () { 
-			$('#category').on('change',function(e){
-				console.log(e);
-				var c_id = e.target.value;
+	 <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <link href="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/css/bootstrap.min.css"
+        rel="stylesheet" type="text/css" />
+    <script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.0.3/js/bootstrap.min.js"></script>
+    <link href="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/css/bootstrap-multiselect.css"
+        rel="stylesheet" type="text/css" />
+    <script src="http://cdn.rawgit.com/davidstutz/bootstrap-multiselect/master/dist/js/bootstrap-multiselect.js"
+        type="text/javascript"></script>
+    
+<script>
+  $(document).ready(function () { 
+   $('#category').on('change',function(e){
+    console.log(e);
+    var c_id = e.target.value;
             //console.log(cat_id);
             //ajax
-            $.get('/ajaxsubcat?c_id='+ c_id,function(data){
+           //
+
+            $.get('/ajaxsubcat1?c_id='+ c_id,function(data){
                 //success data
                //console.log(data);
                var subcat =  $('#subcategory').empty();
+
+               //subcat.append('<option value ="0">dfd</option>');
+               //var test="mitesh";
+               subcat.append('<option value ="'+c_id+'">Select SubCategory</option>');
                $.each(data,function(create,subcatObj){
-               	var option = $('<option/>', {id:create, value:subcatObj});
-               	subcat.append('<option value ="'+subcatObj+'">'+subcatObj+'</option>');
+                //var option = $('<option/>', {id:create, value:subcatObj});
+
+                subcat.append('<option value ="'+c_id+'">'+subcatObj+'</option>');
                });
            });
         });
-		});
-	</script>
+  });
+ </script>
 </head>
 <body>
 
@@ -91,24 +106,20 @@
 						</div>
 
 
-						<div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-							<label class="col-md-4 control-label">Sub Parent</label>
+						 <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
+                            <label class="col-md-4 control-label">Sub Parent</label>
 
-							<div class="col-md-6">
-								<select name="c_parent" id="subcategory" class="form-control">
-								<option selected="selected" value="">Select SubCategory
-								</option>
+                            <div class="col-md-6">
+                                <select name="p_category_id" id="subcategory" class="form-control">
+                                <option selected="selected" value="">Select SubCategory
+                                </option>
 
-									<option value=""></option>
-								</select>
-
-
-							</div>
-						</div>
+                                    <option value=""></option>
+                                </select>
 
 
-
-
+                            </div>
+                        </div>
 						<div class="form-group">
 							<div class="col-md-6 col-md-offset-4">
 								<button type="submit" class="btn btn-primary">
