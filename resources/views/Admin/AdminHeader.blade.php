@@ -6,8 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
   
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
-  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>*/-->
+  <!--<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>-->
    <style>
             .dropdown-submenu {
     position: relative;
@@ -87,27 +87,20 @@
             <ul class="nav navbar-nav">
             <!--<li><a href="#"></a></li>-->
             <li class="dropdown">
-               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Product<b class="caret"></b></a>
+               <a href="#" class="dropdown-toggle" data-toggle="dropdown">Product <b class="caret"></b></a>
                <ul class="dropdown-menu">
-               <li><a href="#">Add Product</a></li>
+               <li><a href="{{ url('AddProduct') }}">Add Product</a></li>
                </ul>
-                <li class="dropdown">
+            </li>
+            <li class="dropdown">
                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Category<b class="caret"></b></a>
-
                <ul class="dropdown-menu">
-               <li><a href="{{ url('AddCategory') }}">Some Text</a></li>
+               <li><a href="#">Add Category</a></li>
                </ul>
-
-
-
-               </li>
-               
-               </ul>
-   
-        
-            
-
-        
+            </li>
+            <!--<li><a href="#">Category</a></li>-->
+              
+            </ul>
          </div>
       </div>
    </nav>

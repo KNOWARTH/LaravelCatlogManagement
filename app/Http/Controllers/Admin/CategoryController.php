@@ -55,16 +55,16 @@ class CategoryController extends Controller
     	return view('Admin.Category.AddCategory')->with('results',$arrayName);
 
     }
-    public function ajaxsubcat()
+    public function ajaxsubcat2()
     {
-    	$c_id = Input::get('c_id');
-    	
-    	//$c_id = DB::table('category')->get('c_id');
-    	//$cat_id = Input::get('cat_id');
-		$subcategories = DB::table('category')->where('c_parent','=',$c_id)->lists('c_name');
-		
-		return Response::json($subcategories);
-		}
+        $c_id = Input::get('c_id');
+        
+        //$c_id = DB::table('category')->get('c_id');
+        //$cat_id = Input::get('cat_id');
+        $subcategories = DB::table('category')->where('c_parent','=',$c_id)->lists('c_name');
+        
+        return Response::json($subcategories);
+    }
 
     public function insert_category(Request $request)
     {
