@@ -32,5 +32,9 @@ Route::group(['middleware' => ['web']], function () {
     Route::post('insertProduct','Admin\ProductController@insertProduct');
     Route::get('AddCategory','Admin\CategoryController@AddCategory');
   Route::post('insert_category','Admin\CategoryController@insert_category');
-   Route::get('ajaxsubcat','Admin\CategoryController@ajaxsubcat');
+   Route::get('ajaxsubcat2','Admin\CategoryController@ajaxsubcat2');
+    Route::get('ShowProduct','Admin\ProductController@ShowProduct');
+    Route::get('EditProduct/{p_id}','Admin\ProductController@EditProduct');
+    Route::any('testing','Admin\ProductController@testing');
+       Route::get('ajaxsubcat1','Admin\ProductController@ajaxsubcat1');
 });
